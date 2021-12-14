@@ -1,0 +1,54 @@
+POST https://api.bigcommerce.com/stores/43zpy7zep2/v3/storefront/api-token
+X-Auth-Token: 3hceiyn3fn3e49e5rug8r9o0how7icp
+Accept: application/json
+Content-type: application/json
+
+{
+  "channel_id": 872601,
+  "expires_at": 1672491599,
+  "allowed_cors_origins": ["http://localhost:3000"]
+}
+
+###
+POST https://api.bigcommerce.com/stores/43zpy7zep2/v3/channels
+X-Auth-Token: 3hceiyn3fn3e49e5rug8r9o0how7icp
+Content-Type: application/json
+
+{
+  "name": "Club Stores",
+  "type": "storefront",
+  "platform": "next"
+}
+
+###
+GET https://api.bigcommerce.com/stores/43zpy7zep2/v3/channels
+X-Auth-Token: 3hceiyn3fn3e49e5rug8r9o0how7icp
+Content-Type: application/json
+
+
+###
+GET https://api.bigcommerce.com/stores/43zpy7zep2/v3/catalog/products/113/variants
+X-Auth-Token: 3hceiyn3fn3e49e5rug8r9o0how7icp
+Content-Type: application/json
+
+###
+PUT https://api.bigcommerce.com/stores/43zpy7zep2/v3/channels/872601
+X-Auth-Token: 3hceiyn3fn3e49e5rug8r9o0how7icp
+Content-Type: application/json
+
+{
+  "is_listable_from_ui": true
+}
+
+###
+GET http://localhost:3000/api/cart/get-cart?cart_id=9a4ed4d6-df89-4361-81ff-6717a4fd90af
+Content-Type: application/json
+
+###
+GET http://localhost:3000/api/cart/add-item?product_id=112&variant_id=78&quantity=1
+Content-Type: application/json
+
+###
+GET https://api.bigcommerce.com/stores/43zpy7zep2/v3/catalog/products/112?include=variants
+X-Auth-Token: 3hceiyn3fn3e49e5rug8r9o0how7icp
+Content-Type: application/json

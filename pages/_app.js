@@ -1,7 +1,17 @@
 import '../styles/globals.css'
+//import { CommerceProvider } from '@bigcommerce/storefront-data-hooks'
+import { CartContextProvider } from '../components/providers/cart-provider'
+//import Navbar from 'components/navbar.js'
+import Layout from 'components/layout.js'
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+const App = ({ Component, pageProps }) => {
+  return (
+    <CartContextProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </CartContextProvider>
+  )
 }
 
-export default MyApp
+export default App

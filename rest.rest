@@ -52,3 +52,74 @@ Content-Type: application/json
 GET https://api.bigcommerce.com/stores/43zpy7zep2/v3/catalog/products/112?include=variants
 X-Auth-Token: 3hceiyn3fn3e49e5rug8r9o0how7icp
 Content-Type: application/json
+
+#fffyAPPgllhIxzsRAx2C_eLXtkC2bMnGoM7cPFZ3f6c
+
+###
+GET https://api.vercel.com/v8/projects
+Authorization: Bearer GBJgKE0vFNvwr4iEpV0oSTRo
+
+###
+POST https://api.vercel.com/v8/projects
+Authorization: Bearer GBJgKE0vFNvwr4iEpV0oSTRo
+
+{
+  "name": "test-project",
+  "environmentVariables" : [
+    {
+      "type": "plain",
+      "key": "HOME_CATEGORY_ID",
+      "value": "24",
+      "target": [
+        "production",
+        "preview",
+        "development"
+      ]
+    },
+    {
+      "type": "plain",
+      "key": "BIGCOMMERCE_STORE_API_URL",
+      "value": "https://api.bigcommerce.com/stores/43zpy7zep2",
+      "target": [
+        "production",
+        "preview",
+        "development"
+      ]
+    },
+    {
+      "type": "plain",
+      "key": "BIGCOMMERCE_STORE_API_TOKEN",
+      "value": "3hceiyn3fn3e49e5rug8r9o0how7icp",
+      "target": [
+        "production",
+        "preview",
+        "development"
+      ]
+    }
+  ],
+  "framework": "nextjs",
+  "gitRepository": {
+    "type": "github",
+    "repo": "uniform-shop",
+    "repoId": 438105401,
+    "org": "bc-simonpallister",
+    "gitCredentialId": "cred_090f27fd816d4fd1a9337febeb84cc03ccdb526f",
+    "productionBranch": "main",
+    "sourceless": true
+  }
+}
+
+
+###
+POST https://api.vercel.com/v13/deployments?forcenew=true
+Authorization: Bearer GBJgKE0vFNvwr4iEpV0oSTRo
+
+{
+  "name": "test-project-deployment",
+  "alias": "test-project-alias",
+  "project": "test-project"
+}
+
+###
+GET https://api.vercel.com/v2/deployments/dpl_AcN9oCrwVteAHTeK61jcVXpVPfkz/aliases
+Authorization: Bearer GBJgKE0vFNvwr4iEpV0oSTRo

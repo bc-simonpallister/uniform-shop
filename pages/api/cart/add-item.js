@@ -23,7 +23,7 @@ const handler = async (req, res) => {
   console.log(typeof(cart_id))
   console.log(cart_id == "null")
 
-  if (cart_id || cart_id !== 'null'){
+  if (cart_id !== 'null'){
     console.log('adding to existing cart')
     const response = await fetch( `${process.env.BIGCOMMERCE_STORE_API_URL}/v3/carts/${cart_id}/items`, {
       method: "POST",
